@@ -1,18 +1,22 @@
-# 17_capstone — 미니 프로젝트 (옵션)
+# 17_capstone — 미니 프로젝트
 
-> 이 폴더는 **Phase 5**에서 채워질 예정입니다. (현재는 placeholder)
+Phase 1~4 에서 배운 내용을 통합한 두 개의 작은 프로젝트.
 
-## 배우는 것
-- (Phase 5에서 채워짐)
+## 프로젝트
 
-## 학습 순서
-1. (Phase 5에서 채워짐)
+### 01_todo_cli — TODO CLI
+JSON 저장 기반 CLI todo 관리자.
+- dataclass 모델 + pathlib 저장 + argparse CLI + pytest 테스트
+- 자세히는 [01_todo_cli/README.md](01_todo_cli/README.md)
 
-## 실행 방법
+### 02_book_api — Mini Book API
+FastAPI + SQLAlchemy in-memory CRUD 마이크로 서비스.
+- pydantic 스키마 + SQLAlchemy ORM + FastAPI 라우트 + TestClient
+- 자세히는 [02_book_api/README.md](02_book_api/README.md)
+
+## 통합 테스트
 ```bash
-uv run python 17_capstone/01_*.py
+uv run pytest 17_capstone/ -q
 ```
 
-## 연습문제
-- `exercises/` 의 TODO를 채우고, `solutions/` 와 비교한다.
-- (Phase 5에서 채워짐)
+총 14개 테스트 (todo_cli 9 + book_api 5) 가 모두 통과해야 한다.
