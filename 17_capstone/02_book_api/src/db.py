@@ -1,0 +1,20 @@
+"""SQLAlchemy engine, session, declarative Base."""
+
+from collections.abc import Iterator
+
+from sqlalchemy import create_engine
+from sqlalchemy.orm import Session, declarative_base, sessionmaker
+
+DATABASE_URL = "sqlite:///:memory:"
+engine = create_engine(DATABASE_URL, connect_args={"check_same_thread": False})
+SessionLocal = sessionmaker(bind=engine, autoflush=False, autocommit=False)
+Base = declarative_base()
+
+
+def get_session() -> Iterator[Session]:
+    """Yield a database session and close it when done."""
+    s = SessionLocal()
+    try:
+        yield s
+    finally:
+        s.close()
