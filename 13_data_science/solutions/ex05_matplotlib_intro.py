@@ -27,4 +27,4 @@ with tempfile.TemporaryDirectory() as tmpdir:
 
     file_size = os.path.getsize(png_path)
     assert file_size > 0, f"PNG 파일이 비어 있습니다 (size={file_size})"
-    print(f"OK (파일 크기: {file_size:,} bytes)")
+    print("OK")
