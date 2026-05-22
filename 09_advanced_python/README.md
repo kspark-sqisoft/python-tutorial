@@ -5,12 +5,14 @@
 - 컨텍스트 매니저 (클래스 기반 `__enter__`/`__exit__` + `@contextmanager`)
 - 디스크립터 — `@property` 의 정체
 - 메타클래스 맛보기 — `type` 으로 클래스 동적 생성
+- 구조적 패턴 매칭 — `match`/`case` 본격편 (시퀀스/매핑/클래스 패턴 + 가드, Dart/TS 비교)
 
 ## 학습 순서
 1. `01_decorators.py`
 2. `02_context_managers.py`
 3. `03_descriptors.py`
 4. `04_metaclasses_intro.py`
+5. `05_pattern_matching.py`
 
 ## 실행 방법
 ```bash
