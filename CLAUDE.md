@@ -75,8 +75,18 @@ cd 17_capstone/02_book_api && uv run uvicorn src.app:app --reload   # http://127
 Phase 0~5 모두 완성된 상태. 새 폴더를 추가하기보다 기존 폴더의 스크립트/연습문제를 보강·수정하는 작업이 대부분이다. Phase별 계획서는 `docs/superpowers/plans/2026-05-2*-python-tutorial-phase-*.md` 참고.
 
 ### 토픽 매핑 메모
-- 값/참조 타입 + 함수 인자 전달 모델 + `is`/`==` + 가변 기본 인자 함정은 `02_data_structures/07_value_vs_reference.py`에 정리되어 있다. Dart/TypeScript와의 매핑표·코드 비교가 같은 파일 끝 섹션에 포함된다.
-- 얕은/깊은 복사·불변성 유지 패턴(`copy` 모듈, `MappingProxyType`, `@dataclass(frozen=True)`)은 `02_data_structures/08_copy_immutability.py`에 정리되어 있다. Dart/TypeScript 비교도 같은 파일 끝 섹션에 포함된다. 다른 폴더에 같은 내용을 중복 작성하지 말 것.
+모두 같은 파일 끝에 **Dart/TypeScript 비교 섹션**을 포함한다. 다른 폴더에 동일 내용을 중복 작성하지 말 것.
+
+- 값/참조 타입 + 함수 인자 전달 모델 + `is`/`==` + 가변 기본 인자 함정 → `02_data_structures/07_value_vs_reference.py`
+- 얕은/깊은 복사·불변성 유지 패턴(`copy` 모듈, `MappingProxyType`, frozen dataclass) → `02_data_structures/08_copy_immutability.py`
+- `enum` (Enum/IntEnum/StrEnum, auto, 멤버에 부가 정보, match 와 결합) → `05_oop/06_enum.py`
+- `abc.ABC` vs `Protocol` 비교 (명시적 상속 강제 vs 구조적 타이핑, `runtime_checkable`) → `05_oop/07_abc.py`
+- `__slots__` 와 `@dataclass(slots=True)`, 자식 클래스에서 슬롯 유지 함정 → `05_oop/08_slots.py`
+- 예외 chaining: `raise X from Y`, `__cause__`/`__context__`, `from None`, `ExceptionGroup` + `except*` → `06_errors_exceptions/06_chaining.py`
+- 구조적 패턴 매칭 본격편(리터럴/시퀀스/매핑/클래스 패턴 + 가드 + 캡처 함정) → `09_advanced_python/05_pattern_matching.py`
+
+### Windows 콘솔 호환성 메모
+이 저장소의 학습 데모는 `cp949` 콘솔에서 `uv run python` 으로 실행될 수 있다. `print()` 인자에 cp949로 인코딩 불가한 비ASCII 기호(예: em dash `—`, 근사기호 `≈`)는 `UnicodeEncodeError`를 일으킨다. 주석에는 자유롭게 쓰되, **`print` 인자에는 ASCII 또는 한글만 사용**한다(`-`, `~`, `->`, `<-` 등으로 대체).
 
 ### `17_capstone/` 구조 주의점
 - 폴더명이 숫자로 시작해 패키지 import가 불가능. 두 프로젝트 모두 `src/` 안에 모듈을 두고 직접 파일 경로로 실행한다.
