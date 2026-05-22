@@ -6,6 +6,9 @@
 - 매직 메서드 (`__init__`, `__repr__`/`__str__`, `__eq__`/`__hash__`, `__add__`, `__len__`/`__iter__`/`__contains__`)
 - `@dataclass` — boilerplate 제거 (필드 선언에 타입 힌트 필수이므로 이 폴더에서 유일하게 사용)
 - `@property` — 캡슐화 (자바 getter/setter 와 비교)
+- `enum` — 이름 붙은 상수 집합 (IntEnum / StrEnum 포함, Dart/TS 비교)
+- `abc.ABC` vs `Protocol` — 명시적 상속 강제 vs 구조적 타이핑
+- `__slots__` — 인스턴스 속성 고정 + 메모리 절약
 
 ## 학습 순서
 1. `01_classes.py`
@@ -13,6 +16,9 @@
 3. `03_magic_methods.py`
 4. `04_dataclass.py`
 5. `05_property.py`
+6. `06_enum.py`
+7. `07_abc.py`
+8. `08_slots.py`
 
 ## 실행 방법
 ```bash
