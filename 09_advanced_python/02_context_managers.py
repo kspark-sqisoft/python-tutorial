@@ -102,7 +102,7 @@ if __name__ == "__main__":
     # SuppressZeroDivision — 예외 삼킴 시연
     print("=== SuppressZeroDivision ===")
     with SuppressZeroDivision():
-        x = 1 / 0   # 이 예외는 무시됨
+        x = 1 / 0   # pyrefly: ignore[division-by-zero]  # 이 예외는 무시됨
     print("with 블록 이후 정상 실행")
 
     print()

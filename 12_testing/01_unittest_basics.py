@@ -50,7 +50,7 @@ class TestMath(unittest.TestCase):
     def test_division_by_zero(self):
         # 특정 예외가 발생하면 통과
         with self.assertRaises(ZeroDivisionError):
-            _ = 1 / 0
+            _ = 1 / 0  # pyrefly: ignore[division-by-zero]
 
 
 # ──── 3. 추가 어셋션 종류 ────

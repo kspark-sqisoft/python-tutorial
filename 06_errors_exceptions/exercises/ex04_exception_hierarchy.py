@@ -30,7 +30,7 @@ def get_exception_name(fn):
         return type(e).__name__
 
 cases = {
-    "div_zero":  lambda: 1 / 0,
+    "div_zero":  lambda: 1 / 0,  # pyrefly: ignore[division-by-zero]
     "key_miss":  lambda: {}["x"],
     "idx_out":   lambda: [][0],
     "int_fail":  lambda: int("a"),

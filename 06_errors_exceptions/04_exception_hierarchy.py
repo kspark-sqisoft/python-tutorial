@@ -29,7 +29,7 @@ BaseException → Exception → 각종 구체 예외 순으로 상속된다.
 def trigger(kind):
     # 의도적으로 각 예외를 발생시키는 함수
     if kind == "zero_div":
-        return 1 / 0                   # ZeroDivisionError
+        return 1 / 0                   # pyrefly: ignore[division-by-zero]  # ZeroDivisionError
     elif kind == "key":
         return {}["없는키"]             # KeyError
     elif kind == "index":
@@ -95,7 +95,7 @@ if __name__ == "__main__":
     catch_with_parent()
 
     print("\n=== 3. except Exception: 안전 패턴 ===")
-    safe_run(lambda: 1 / 0)
+    safe_run(lambda: 1 / 0)  # pyrefly: ignore[division-by-zero]
     safe_run(lambda: int("nope"))
 
     print("\n=== 4. 예외 계층 확인 (issubclass) ===")

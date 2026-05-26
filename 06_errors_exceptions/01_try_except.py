@@ -76,4 +76,4 @@ if __name__ == "__main__":
 
     print("\n=== 4. except Exception: 권장 패턴 ===")
     safe_catch_all(int, "hello")
-    safe_catch_all(lambda: 1 / 0)
+    safe_catch_all(lambda: 1 / 0)  # pyrefly: ignore[division-by-zero]
